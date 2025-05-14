@@ -23,6 +23,9 @@ export function SiteHeader() {
             <Link href="/features" className="text-sm text-gray-400 hover:text-white transition-colors">
               Features
             </Link>
+            <Link href="/blog" className="text-sm text-gray-400 hover:text-white transition-colors">
+              Blog
+            </Link>
             <Link href="/contact" className="text-sm text-gray-400 hover:text-white transition-colors">
               Contact
             </Link>

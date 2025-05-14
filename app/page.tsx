@@ -18,6 +18,22 @@ import {
   LineChart,
   PieChart,
 } from "lucide-react"
+import type { Metadata } from "next"
+
+// SEO metadata specific to the home page
+export const metadata: Metadata = {
+  title: "YouTube Thumbnail Tester | Boost Your Click-Through Rate",
+  description:
+    "Create thumbnails that drive more views. Test how your thumbnails appear across YouTube's interface and optimize your click-through rate.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "YouTube Thumbnail Tester | Boost Your Click-Through Rate",
+    description:
+      "Create thumbnails that drive more views. Test how your thumbnails appear across YouTube's interface and optimize your click-through rate.",
+  },
+}
 
 export default function LandingPage() {
   return (

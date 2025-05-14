@@ -13,6 +13,23 @@ import {
   Zap,
   CheckCircle,
 } from "lucide-react"
+import type { Metadata } from "next"
+
+// SEO metadata specific to the features page
+export const metadata: Metadata = {
+  title: "Features | YouTube Thumbnail Tester",
+  description:
+    "Explore the powerful features of YouTube Thumbnail Tester. Multi-device preview, A/B testing, AI enhancement, and more tools to optimize your thumbnails.",
+  alternates: {
+    canonical: "/features",
+  },
+  openGraph: {
+    title: "Features | YouTube Thumbnail Tester",
+    description:
+      "Explore the powerful features of YouTube Thumbnail Tester. Multi-device preview, A/B testing, AI enhancement, and more tools to optimize your thumbnails.",
+    url: "/features",
+  },
+}
 
 export default function FeaturesPage() {
   return (

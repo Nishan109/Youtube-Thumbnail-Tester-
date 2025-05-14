@@ -1,6 +1,23 @@
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowLeft, Users, Globe, Zap } from "lucide-react"
+import type { Metadata } from "next"
+
+// SEO metadata specific to the about page
+export const metadata: Metadata = {
+  title: "About Us | YouTube Thumbnail Tester",
+  description:
+    "Learn about YouTube Thumbnail Tester and our mission to help content creators optimize their thumbnails for maximum engagement and higher CTR.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "About Us | YouTube Thumbnail Tester",
+    description:
+      "Learn about YouTube Thumbnail Tester and our mission to help content creators optimize their thumbnails for maximum engagement and higher CTR.",
+    url: "/about",
+  },
+}
 
 export default function AboutPage() {
   return (
