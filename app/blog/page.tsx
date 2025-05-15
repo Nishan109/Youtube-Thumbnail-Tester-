@@ -120,10 +120,10 @@ export default function BlogPage() {
   const otherPosts = posts.filter((post) => !post.featured)
 
   return (
-    <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
+    <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8 bg-black">
       <div className="mb-12 text-center">
-        <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">Blog</h1>
-        <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
+        <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">Blog</h1>
+        <p className="mt-4 text-lg text-white">
           Insights, tips, and strategies to optimize your YouTube thumbnails
         </p>
       </div>
@@ -131,9 +131,9 @@ export default function BlogPage() {
       {/* Featured post */}
       {featuredPost && (
         <div className="mb-16">
-          <h2 className="mb-6 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Featured Article</h2>
+          <h2 className="mb-6 text-2xl font-bold tracking-tight text-white">Featured Article</h2>
           <div className="grid gap-8 md:grid-cols-2">
-            <div className="relative aspect-video overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800">
+            <div className="relative aspect-video overflow-hidden rounded-xl bg-gray-800">
               <Image
                 src={featuredPost.image || "/placeholder.svg"}
                 alt={featuredPost.title}
@@ -144,26 +144,26 @@ export default function BlogPage() {
             </div>
             <div className="flex flex-col justify-center">
               <div className="flex items-center gap-2 mb-2">
-                <span className="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-semibold text-gray-800 dark:bg-gray-800 dark:text-gray-100">
+                <span className="inline-flex items-center rounded-full bg-gray-800 px-2.5 py-0.5 text-xs font-semibold text-white">
                   {featuredPost.category}
                 </span>
-                <div className="flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400">
+                <div className="flex items-center gap-1 text-sm text-white">
                   <Calendar className="h-4 w-4" />
                   <time dateTime={featuredPost.date}>{featuredPost.date}</time>
                 </div>
-                <div className="flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400">
+                <div className="flex items-center gap-1 text-sm text-white">
                   <Clock className="h-4 w-4" />
                   <span>{featuredPost.readingTime}</span>
                 </div>
               </div>
-              <h3 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-3xl">
+              <h3 className="mb-2 text-2xl font-bold tracking-tight text-white sm:text-3xl">
                 {featuredPost.title}
               </h3>
-              <p className="mb-4 text-gray-600 dark:text-gray-400">{featuredPost.excerpt}</p>
+              <p className="mb-4 text-white">{featuredPost.excerpt}</p>
               <div className="mt-auto">
                 <Link
                   href={`/blog/${featuredPost.slug}`}
-                  className="inline-flex items-center gap-1 font-medium text-black hover:text-gray-700 dark:text-white dark:hover:text-gray-300"
+                  className="inline-flex items-center gap-1 font-medium text-white hover:text-gray-300"
                 >
                   Read more <ArrowRight className="h-4 w-4" />
                 </Link>
@@ -175,14 +175,14 @@ export default function BlogPage() {
 
       {/* All posts */}
       <div>
-        <h2 className="mb-6 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">All Articles</h2>
+        <h2 className="mb-6 text-2xl font-bold tracking-tight text-white">All Articles</h2>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {otherPosts.map((post) => (
             <div
               key={post.id}
-              className="group relative flex flex-col overflow-hidden rounded-lg border border-gray-200 dark:border-gray-800"
+              className="group relative flex flex-col overflow-hidden rounded-lg border border-gray-800 bg-black"
             >
-              <div className="aspect-video w-full bg-gray-100 dark:bg-gray-800 relative">
+              <div className="aspect-video w-full bg-gray-800 relative">
                 <Image
                   src={post.image || "/placeholder.svg"}
                   alt={post.title}
@@ -192,22 +192,22 @@ export default function BlogPage() {
               </div>
               <div className="flex flex-1 flex-col p-4">
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-semibold text-gray-800 dark:bg-gray-800 dark:text-gray-100">
+                  <span className="inline-flex items-center rounded-full bg-gray-800 px-2.5 py-0.5 text-xs font-semibold text-white">
                     {post.category}
                   </span>
-                  <span className="text-xs text-gray-500 dark:text-gray-400">{post.readingTime}</span>
+                  <span className="text-xs text-white">{post.readingTime}</span>
                 </div>
                 <Link href={`/blog/${post.slug}`} className="block mt-1">
-                  <h3 className="text-xl font-semibold leading-tight text-gray-900 dark:text-white group-hover:underline">
+                  <h3 className="text-xl font-semibold leading-tight text-white group-hover:underline">
                     {post.title}
                   </h3>
                 </Link>
-                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 line-clamp-3">{post.excerpt}</p>
+                <p className="mt-2 text-sm text-white line-clamp-3">{post.excerpt}</p>
                 <div className="mt-4 flex items-center gap-2">
-                  <div className="h-8 w-8 rounded-full bg-gray-200 dark:bg-gray-700" />
-                  <span className="text-sm font-medium text-gray-900 dark:text-white">{post.author}</span>
-                  <span className="text-sm text-gray-500 dark:text-gray-400">•</span>
-                  <time className="text-sm text-gray-500 dark:text-gray-400" dateTime={post.date}>
+                  <div className="h-8 w-8 rounded-full bg-gray-700" />
+                  <span className="text-sm font-medium text-white">{post.author}</span>
+                  <span className="text-sm text-white">•</span>
+                  <time className="text-sm text-white" dateTime={post.date}>
                     {post.date}
                   </time>
                 </div>
@@ -218,13 +218,13 @@ export default function BlogPage() {
       </div>
 
       {/* Newsletter signup */}
-      <div className="mt-16 rounded-xl bg-gray-50 p-6 dark:bg-gray-900/50 sm:p-8">
+      <div className="mt-16 rounded-xl bg-gray-900 p-6 sm:p-8">
         <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-8">
           <div className="sm:flex-1">
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">
+            <h3 className="text-xl font-semibold text-white sm:text-2xl">
               Subscribe to our newsletter
             </h3>
-            <p className="mt-1 text-gray-600 dark:text-gray-400">
+            <p className="mt-1 text-white">
               Get the latest thumbnail tips and strategies delivered to your inbox
             </p>
           </div>
@@ -233,13 +233,13 @@ export default function BlogPage() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 rounded-md border border-gray-300 bg-white px-3 py-2 text-sm placeholder:text-gray-400 dark:border-gray-700 dark:bg-gray-800 dark:text-white"
+                className="flex-1 rounded-md border border-gray-700 bg-gray-800 px-3 py-2 text-sm text-white placeholder:text-gray-400"
               />
-              <button className="inline-flex items-center justify-center rounded-md bg-black px-4 py-2 text-sm font-medium text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200">
+              <button className="inline-flex items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium text-black hover:bg-gray-200">
                 Subscribe
               </button>
             </div>
-            <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+            <p className="mt-1 text-xs text-white">
               We respect your privacy. Unsubscribe at any time.
             </p>
           </div>
